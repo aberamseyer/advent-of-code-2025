@@ -9,7 +9,7 @@ long Part2(string fileName)
 
     foreach(var line in File.ReadLines(fileName))
     {
-        var turn = line[1..].AsSpan().AsLong();
+        var turn = line.AsSpan()[1..].AsLong();
         password += turn / 100;
         turn %= 100;
 
@@ -44,7 +44,7 @@ long Part1(string fileName)
 
     foreach(var line in File.ReadLines(fileName))
     {
-        var turn = line[1..].AsSpan().AsLong() % 100;
+        var turn = line.AsSpan()[1..].AsLong();
         if (line[0] == 'L')
         {
             dial -= turn;
